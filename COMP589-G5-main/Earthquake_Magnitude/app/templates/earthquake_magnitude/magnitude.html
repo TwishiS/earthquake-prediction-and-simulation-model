@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>City View</title>
+    <style>
+
+        body {
+            /*background-image: url("/static/img/advertisement.jpg");*/
+            background-image: url("data:image/jpeg;base64,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");
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        div {
+            background-image: url("https://earth.stanford.edu/sites/default/files/styles/responsive_large/public/paragraph/hero-banner/shutterstock_473369494.jpg?itok=Fhk7wzho");
+            background-size: contain;
+            width: 400px;
+            height: 500px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .fancy-box {
+            background-color: #f7f7f7; /* set the background color */
+            border: 2px solid #ddd; /* add a border with a different color */
+            border-radius: 10px; /* round the corners */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* add a shadow */
+            padding: 20px; /* add padding to create space between the border and content */
+            text-align: center; /* center the content */
+            max-width: 400px; /* set a maximum width */
+            margin: 0 auto; /* center the box horizontally */
+        }
+
+        h2 {
+            font-weight: bold;
+            text-shadow: -1px 0 black, 1px 0 black;
+            font-size: 22px;
+        }
+
+        p {
+            text-shadow: -1px 0 blue, 1px 0 blue;
+            font-size: 22px;
+        }
+
+        form {
+            font-weight: bold;
+            text-shadow: -1px 0 black, 1px 0 black;
+            font-size: 18px;
+        }
+
+        input {
+            text-shadow: -1px 0 black, 1px 0 black;
+            font-size: 18px;
+        }
+
+     </style>
+</head>
+
+<body>
+
+    <center>
+        <h1 style="text-shadow: -1px 0 black, 1px 0 black, 0 -1px black;">EARTHQUAKE</h1>
+
+        <form method="post" action="{% url 'my_view' %}">
+            {% csrf_token %}
+            <label for="Latitude">Latitude:</label>
+            <input name="latitude" id="id_latitude" value="{{ lat_lng.lat }}">
+            <label for="Longitude">Longitude:</label>
+            <input name="longitude" id="id_longitude" value="{{ lat_lng.lng }}">
+            <label for="datetime">Datetime:</label>
+            <input type="datetime-local" name="datetime" value="{{ initial_datetime }}"><br>
+            <input type="submit" value="Submit">
+        </form>
+
+
+        {% if magnitude_output %}
+        <br />
+        <br />
+        <div class="fancy-box">
+            <h2> Magnitude, Depth</h2>
+            <p>{{ magnitude_output }}, {{ depth_output}}</p>
+        </div>
+
+        <br />
+
+        {% with mag=magnitude_output|floatformat:0|add:0 %}
+
+            {% if mag == 1 %}
+                    <a href="{% url 'video_player' video_id=mag %}" style="background-color: #17459d;
+                border-radius: 4px; color: #ffffff; display: inline-block;
+                font-family: sans-serif; font-size: 18px; font-weight: bold;
+                line-height: 60px; text-align: center; text-decoration: none;
+                width: 200px; -webkit-text-size-adjust: none;">Simulation</a>
+            {% elif mag == 2 %}
+                    <a href="{% url 'video_player' video_id=mag %}" style="background-color: #17459d;
+                border-radius: 4px; color: #ffffff; display: inline-block;
+                font-family: sans-serif; font-size: 18px; font-weight: bold;
+                line-height: 60px; text-align: center; text-decoration: none;
+                width: 200px; -webkit-text-size-adjust: none;">Simulation</a>
+            {% elif mag == 3 %}
+                    <a href="{% url 'video_player' video_id=mag %}" style="background-color: #17459d;
+                border-radius: 4px; color: #ffffff; display: inline-block;
+                font-family: sans-serif; font-size: 18px; font-weight: bold;
+                line-height: 60px; text-align: center; text-decoration: none;
+                width: 200px; -webkit-text-size-adjust: none;">Simulation</a>
+            {% elif mag == 4 %}
+                    <a href="{% url 'video_player' video_id=mag %}" style="background-color: #17459d;
+                border-radius: 4px; color: #ffffff; display: inline-block;
+                font-family: sans-serif; font-size: 18px; font-weight: bold;
+                line-height: 60px; text-align: center; text-decoration: none;
+                width: 200px; -webkit-text-size-adjust: none;">Simulation</a>
+            {% elif mag == 5 %}
+                    <a href="{% url 'video_player' video_id=mag %}" style="background-color: #17459d;
+                border-radius: 4px; color: #ffffff; display: inline-block;
+                font-family: sans-serif; font-size: 18px; font-weight: bold;
+                line-height: 60px; text-align: center; text-decoration: none;
+                width: 200px; -webkit-text-size-adjust: none;">Simulation</a>
+            {% elif mag == 6 %}
+                    <a href="{% url 'video_player' video_id=mag %}" style="background-color: #17459d;
+                border-radius: 4px; color: #ffffff; display: inline-block;
+                font-family: sans-serif; font-size: 18px; font-weight: bold;
+                line-height: 60px; text-align: center; text-decoration: none;
+                width: 200px; -webkit-text-size-adjust: none;">Simulation</a>
+            {% elif mag == 7 %}
+                    <a href="{% url 'video_player' video_id=mag %}" style="background-color: #17459d;
+                border-radius: 4px; color: #ffffff; display: inline-block;
+                font-family: sans-serif; font-size: 18px; font-weight: bold;
+                line-height: 60px; text-align: center; text-decoration: none;
+                width: 200px; -webkit-text-size-adjust: none;">Simulation</a>
+            {% elif mag == 8 %}
+                    <a href="{% url 'video_player' video_id=mag %}" style="background-color: #17459d;
+                border-radius: 4px; color: #ffffff; display: inline-block;
+                font-family: sans-serif; font-size: 18px; font-weight: bold;
+                line-height: 60px; text-align: center; text-decoration: none;
+                width: 200px; -webkit-text-size-adjust: none;">Simulation</a>
+            {% else %}
+                <p>Invalid mag value</p>
+            {% endif %}
+        {% endwith %}
+
+
+
+        {% endif %}
+
+
+
+    </center>
+
+</body>
+
+</html>
+

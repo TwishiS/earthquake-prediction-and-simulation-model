@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Latitude and Longitude Results</title>
+</head>
+<body>
+    <h1>Latitude and Longitude Results</h1>
+    {% if features %}
+    {% for feature in features %}
+    <p>{{ feature.geometry.coordinates }}</p>
+    {% endfor %}
+    {% else %}
+    <p>No results found.</p>
+    {% endif %}
+</body>
+</html>
